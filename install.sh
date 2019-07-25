@@ -6,9 +6,6 @@ dir="/home/ume/.arduino15" ## define driver directory
 if [ -d "$dir" ]
     then
         printf "Arduino device driver directory exists at /home/ume/.arduino15\n\n"
-        rm -rf /home/ume/.arduino15/* > /dev/null 2>&1
-        ## clears directory for new drivers
-            ## consider changing script here as is currently one time use
     else
         printf "Arduino device driver directory does not exist\n"
         printf "Creating at /home/ume/.arduino15\n\n"
