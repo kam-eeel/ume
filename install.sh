@@ -17,7 +17,8 @@ fi
 mkdir -p /home/ume/tempclone/files > /dev/null 2>&1 
 mkdir -p /home/ume/tempclone/files2 > /dev/null 2>&1
 mkdir -p /home/ume/tempclone/files3 > /dev/null 2>&1
-printf "Downloading trinket drivers and libraries from GitHub\n\n"
+mkdir -p /home/ume/tempclone/files4 > /dev/null 2>&1
+printf "Downloading trinket drivers and other libraries from GitHub\n\n"
 sleep 3
 
 ## clone zip of files from github
@@ -29,11 +30,13 @@ mv ./ume /home/ume/tempclone/
 unzip /home/ume/tempclone/ume/trinket-drivers.zip -d /home/ume/tempclone/file > /dev/null 2>&1 
 unzip /home/ume/tempclone/ume/DHT-sensor-library.zip -d /home/ume/tempclone/files2 > /dev/null 2>&1
 unzip /home/ume/tempclone/ume/Adafruit-Unified-Sensor.zip -d /home/ume/tempclone/files3 > /dev/null 2>&1
+unzip /home/ume/tempclone/ume/SevSeg.zip -d /home/ume/tempclone/files4 > /dev/null 2>&1
 
-## copy files to driver direcctory
+## copy files to driver directory
 cp -n -r /home/ume/tempclone/file/* /home/ume/.arduino15 > /dev/null 2>&1
 cp -n -r /home/ume/tempclone/files2/* /home/ume/Arduino/libraries > /dev/null 2>&1
 cp -n -r /home/ume/tempclone/files3/* /home/ume/Arduino/libraries > /dev/null 2>&1
+cp -n -r /home/ume/tempclone/files4/* /home/ume/Arduino/libraries > /dev/null 2>&1
 
 ## change ownership to user ume
 chown -R ume /home/ume/.arduino15 > /dev/null 2>&1 
